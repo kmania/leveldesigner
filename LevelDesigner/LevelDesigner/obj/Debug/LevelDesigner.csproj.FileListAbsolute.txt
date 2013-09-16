@@ -1,0 +1,9 @@
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\bin\Debug\LevelDesigner.exe.config
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\bin\Debug\LevelDesigner.exe
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\bin\Debug\LevelDesigner.pdb
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.csprojResolveAssemblyReference.cache
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.LevelDesigner.resources
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.Properties.Resources.resources
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.csproj.GenerateResource.Cache
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.exe
+H:\- Files\CPIT\PR283\Level Designer\LevelDesigner\LevelDesigner\obj\Debug\LevelDesigner.pdb
