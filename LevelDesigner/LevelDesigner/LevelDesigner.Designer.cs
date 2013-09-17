@@ -35,6 +35,7 @@
             this.btnDraw = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
             this.picturePanel = new System.Windows.Forms.GroupBox();
+            this.tbxPositions = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.picturePanel.SuspendLayout();
             this.SuspendLayout();
@@ -111,11 +112,20 @@
             this.picturePanel.TabStop = false;
             this.picturePanel.Text = "Map";
             // 
+            // tbxPositions
+            // 
+            this.tbxPositions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxPositions.Location = new System.Drawing.Point(423, 94);
+            this.tbxPositions.Name = "tbxPositions";
+            this.tbxPositions.Size = new System.Drawing.Size(181, 20);
+            this.tbxPositions.TabIndex = 7;
+            // 
             // LevelDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 231);
+            this.Controls.Add(this.tbxPositions);
             this.Controls.Add(this.picturePanel);
             this.Controls.Add(this.btnDraw);
             this.Controls.Add(this.label2);
@@ -139,8 +149,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDraw;
-        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.GroupBox picturePanel;
+        public System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.TextBox tbxPositions;
     }
 }
 

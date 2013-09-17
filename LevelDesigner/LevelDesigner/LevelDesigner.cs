@@ -31,12 +31,17 @@ namespace LevelDesigner
 
         }
 
+        public void refresh()
+        {
+            this.picture.Refresh();
+        }
+
         private void btnDraw_Click(object sender, EventArgs e)
         {
             if (this.columns != "" & this.rows != "")
             {
                 this.presenter.setDimensions();
-                this.presenter.setFocusCell(new Point(1, 1), 0);
+                //this.presenter.setFocusCell(new Point(1, 1), 3);
 
                 this.picture.Refresh();
             }
@@ -50,6 +55,11 @@ namespace LevelDesigner
         private void picture_MouseMove(object sender, MouseEventArgs e)
         {
             this.presenter.mouseMove(sender, e);
+        }
+
+        public void setPosition(string text)
+        {
+            this.tbxPositions.Text = text;
         }
     }
 }

@@ -16,5 +16,8 @@ namespace LevelDesigner
         string rows { get; }
         Point size { get; }
         GroupBox panel { get; }
+
+        void refresh();
+        void setPosition(string text);
     }
 }
