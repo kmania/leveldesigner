@@ -102,31 +102,67 @@ namespace LevelDesigner
             if (this.map.cells != null)
             {
                 Point mouse = new Point(evt.X, evt.Y);
+                mouse.X = (mouse.X - (int)this.startX);
+                mouse.Y = (mouse.Y - (int)this.startY);
 
                 foreach (Cell cell in this.map.cells)
                 {
                     Point cellLocation = new Point((int)((cell.x * this.squareSize) + this.startX), (int)((cell.y * this.squareSize) + this.startY));
-                    int wall = 0;
+                    //int wall = 0;
                     bool hit = false;
 
-                    for (wall = 0; wall < 4; wall++)
+                    int column = (int)Math.Truncate(((double)mouse.X + (this.squareSize * .99)) / this.squareSize);
+                    int row = (int)Math.Truncate(((double)mouse.Y + (this.squareSize * .99)) / this.squareSize);
+                    
+
+                    Point mouseInCell = new Point((((column - 1) * this.squareSize) - mouse.X) * -1, (((row - 1) * this.squareSize) - mouse.Y) * -1);
+                    Point[] middleWalls = new Point[] { new Point(this.squareSize / 2, 0), new Point(this.squareSize, this.squareSize / 2), new Point(this.squareSize / 2, this.squareSize), new Point(0, this.squareSize / 2)};
+
+                    int difference = this.squareSize *2;
+                    int chosenWall = 3;
+
+                    /*for (int wall = 0; wall < middleWalls.Length; wall++)
+                    {
+                        if ((Math.Abs(mouseInCell.X - middleWalls[wall].X) + Math.Abs(mouseInCell.Y - middleWalls[wall].Y)) < difference)
+                        {
+                            difference = (Math.Abs(mouseInCell.X - middleWalls[wall].X) + Math.Abs(mouseInCell.Y - middleWalls[wall].Y));
+                            chosenWall = wall;
+                            this.view.setPosition(difference.ToString() + "   ");
+                        }
+                    }*/
+
+                    if (mouseInCell.Y <= 25 & mouseInCell.X < 75 && mouseInCell.X > 25) chosenWall = 0;
+                    else if (mouseInCell.Y >= 75 & mouseInCell.X < 75 && mouseInCell.X > 25) chosenWall = 2;
+                    else if (mouseInCell.X >= 75) chosenWall = 1;
+                    else chosenWall = 3;
+
+                    this.view.setPosition(column.ToString() + " " + row.ToString() + " " + mouseInCell.ToString());
+                    //this.view.setPosition(chosenWall.ToString());
+                    this.setFocusCell(new Point(column, row), chosenWall);
+                    /*List<int> possible = new List<int>();
+                    possible[0] = this.squareSize;// x proximity to mouse
+                    possible[1] = this.squareSize;// y proximity to mouse
+                    possible[2] = 0;// cell x
+                    possible[3] = 0;// cell y
+                    possible[4] = 0;// wall*/
+
+                    /*for (wall = 0; wall < 4; wall++)
                     {
                         if (Math.Abs(mouse.X - (cellLocation.X + (this.wallEnd[wall].X / 2))) <= (this.squareSize / 2) && Math.Abs(mouse.Y - (cellLocation.Y + (this.wallEnd[wall].Y / 4))) <= (this.squareSize / 2))
                         {
                             this.setFocusCell(new Point(cell.column, cell.row), wall);
                             //this.view.refresh();
                             hit = true;
-                            //MessageBox.Show(mouse.ToString() + new Point((int)cellLocation.X + this.wallEnd[wall].X, (int)(cellLocation.Y + this.wallEnd[wall].Y)).ToString());
-                            this.view.setPosition((mouse.ToString() + new Point((int)cellLocation.X + this.wallEnd[wall].X, (int)(cellLocation.Y + this.wallEnd[wall].Y)).ToString()));
-                            break;
+                            //this.view.setPosition((mouse.ToString() + new Point((int)cellLocation.X + this.wallEnd[wall].X, (int)(cellLocation.Y + this.wallEnd[wall].Y)).ToString()));
+                            this.view.setPosition();
+                            //break;
                         }
-                    }
-                    if (hit)
+                    }*/
+                    /*if (hit)
                     {
-                        //MessageBox.Show(mouse.ToString() + new Point((int)startX, (int)startY).ToString());
                         break;
 
-                    }
+                    }*/
                 }
 
                 this.view.refresh();
